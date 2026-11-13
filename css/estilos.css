@@ -1,0 +1,56 @@
+/* ============================================================
+   Estilos propios del portfolio · Adrián Hermida
+   Color de marca: azul agua #0e7490 (contraste 5,36:1 sobre blanco)
+   ============================================================ */
+
+/* ---------- 1. Variables de marca ---------- */
+:root {
+  --bs-primary: #0e7490;
+  --bs-primary-rgb: 14, 116, 144;
+  --bs-link-color: #0e7490;
+  --bs-link-color-rgb: 14, 116, 144;
+  --bs-link-hover-color: #155e75;
+  --bs-link-hover-color-rgb: 21, 94, 117;
+}
+
+/* ---------- 2. Botones con el color de marca ---------- */
+.btn-primary {
+  --bs-btn-bg: #0e7490;
+  --bs-btn-border-color: #0e7490;
+  --bs-btn-hover-bg: #155e75;
+  --bs-btn-hover-border-color: #155e75;
+  --bs-btn-active-bg: #164e63;
+  --bs-btn-active-border-color: #164e63;
+  --bs-btn-disabled-bg: #0e7490;
+  --bs-btn-disabled-border-color: #0e7490;
+  --bs-btn-focus-shadow-rgb: 14, 116, 144;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #0e7490;
+  --bs-btn-border-color: #0e7490;
+  --bs-btn-hover-bg: #0e7490;
+  --bs-btn-hover-border-color: #0e7490;
+  --bs-btn-active-bg: #155e75;
+  --bs-btn-active-border-color: #155e75;
+  --bs-btn-focus-shadow-rgb: 14, 116, 144;
+}
+
+/* ---------- 3. Navegación ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 4.5rem;
+}
+
+/* ---------- 4. Portada ---------- */
+.portada {
+  background: linear-gradient(180deg, #ecfeff 0%, #ffffff 100%);
+}
+
+.foto-perfil {
+  max-width: 17rem;
+  border: 0.4rem solid #ffffff;
+}
