@@ -24,3 +24,7 @@ docs/   cv.pdf
 ## Secciones
 
 Sobre mí · Habilidades · Proyectos · Formación y experiencia · Contacto
+
+## Declaración de uso de IA
+
+He trabajado con Claude (Anthropic) como asistente para agilizar la maquetación, la redacción y el despliegue. El contenido, las decisiones de diseño y la revisión final (W3C y responsive) son míos.
