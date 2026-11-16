@@ -6,6 +6,9 @@
   <title>Adrián Hermida · Desarrollador web junior</title>
   <meta name="description" content="Portfolio de Adrián Hermida, desarrollador web junior (DAW) en Sevilla. Proyectos con Java, Docker, Node.js, PHP y bases de datos.">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&amp;display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/estilos.css">
@@ -184,6 +187,9 @@
                   <a href="https://github.com/adrianhermo93-blip/ud03-despliegue#readme" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
                     <i class="bi bi-play-circle me-1" aria-hidden="true"></i>Demo: Guía de despliegue
                   </a>
+                  <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-proyecto-1">
+                    <i class="bi bi-info-circle me-1" aria-hidden="true"></i>Ver detalle
+                  </button>
                   <a href="https://github.com/adrianhermo93-blip/ud03-despliegue" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">
                     <i class="bi bi-github me-1" aria-hidden="true"></i>Código
                   </a>
@@ -207,6 +213,9 @@
                   <a href="https://github.com/adrianhermo93-blip/practica-docker-adrian#readme" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
                     <i class="bi bi-play-circle me-1" aria-hidden="true"></i>Demo: Guía de puesta en marcha
                   </a>
+                  <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-proyecto-2">
+                    <i class="bi bi-info-circle me-1" aria-hidden="true"></i>Ver detalle
+                  </button>
                   <a href="https://github.com/adrianhermo93-blip/practica-docker-adrian" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">
                     <i class="bi bi-github me-1" aria-hidden="true"></i>Código
                   </a>
@@ -231,6 +240,9 @@
                   <a href="https://github.com/adrianhermo93-blip/clean-code-automation-final#readme" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
                     <i class="bi bi-play-circle me-1" aria-hidden="true"></i>Demo: Resultados del proyecto
                   </a>
+                  <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-proyecto-3">
+                    <i class="bi bi-info-circle me-1" aria-hidden="true"></i>Ver detalle
+                  </button>
                   <a href="https://github.com/adrianhermo93-blip/clean-code-automation-final" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">
                     <i class="bi bi-github me-1" aria-hidden="true"></i>Código
                   </a>
@@ -334,29 +346,32 @@
             </ul>
           </div>
           <div class="col-12 col-lg-7 col-xl-8">
-            <form class="card card-body shadow-sm needs-validation" novalidate>
+            <form class="card card-body shadow-sm needs-validation form-contacto" novalidate>
               <div class="row g-3">
                 <div class="col-12 col-md-6">
                   <label for="nombre" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="name" required>
-                  <div class="invalid-feedback">Escribe tu nombre.</div>
+                  <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="name" minlength="2" required>
+                  <div class="invalid-feedback">Escribe tu nombre (mínimo 2 caracteres).</div>
                 </div>
                 <div class="col-12 col-md-6">
                   <label for="email" class="form-label">Email</label>
                   <input type="email" class="form-control" id="email" name="email" autocomplete="email" required>
-                  <div class="invalid-feedback">Escribe un email válido.</div>
+                  <div class="invalid-feedback">Escribe un email válido, por ejemplo nombre@dominio.com.</div>
                 </div>
                 <div class="col-12">
                   <label for="asunto" class="form-label">Asunto</label>
-                  <input type="text" class="form-control" id="asunto" name="asunto" required>
+                  <input type="text" class="form-control" id="asunto" name="asunto" autocomplete="off" required>
                   <div class="invalid-feedback">Indica el asunto.</div>
                 </div>
                 <div class="col-12">
                   <label for="mensaje" class="form-label">Mensaje</label>
-                  <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
-                  <div class="invalid-feedback">Escribe tu mensaje.</div>
+                  <textarea class="form-control" id="mensaje" name="mensaje" rows="5" autocomplete="off" minlength="10" required></textarea>
+                  <div class="invalid-feedback">Escribe tu mensaje (mínimo 10 caracteres).</div>
                 </div>
                 <div class="col-12">
+                  <div class="alert alert-success d-none mb-3" id="aviso-envio" role="status">
+                    <i class="bi bi-check-circle-fill me-1" aria-hidden="true"></i>Gracias por tu mensaje. Te responderé lo antes posible.
+                  </div>
                   <button type="submit" class="btn btn-primary">
                     <i class="bi bi-send me-1" aria-hidden="true"></i>Enviar mensaje
                   </button>
@@ -375,7 +390,7 @@
       <div class="row align-items-center g-3 text-center text-md-start">
         <div class="col-12 col-md-6">
           <p class="mb-1">&copy; 2026 Adrián Hermida</p>
-          <p class="mb-0 small text-white-50">Última actualización: <time datetime="2026-11-13">13 de noviembre de 2026</time></p>
+          <p class="mb-0 small text-white-50">Última actualización: <time datetime="2026-11-16">16 de noviembre de 2026</time></p>
         </div>
         <div class="col-12 col-md-6 text-md-end">
           <a href="https://github.com/adrianhermo93-blip" class="link-light fs-4 me-3" target="_blank" rel="noopener" aria-label="GitHub de Adrián Hermida"><i class="bi bi-github" aria-hidden="true"></i></a>
@@ -385,6 +400,111 @@
       </div>
     </div>
   </footer>
+
+  <div class="modal fade" id="modal-proyecto-1" tabindex="-1" aria-labelledby="titulo-modal-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h5" id="titulo-modal-1">Despliegue con contenedores y pipeline</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p>Aplicación Node.js 20 con Express que cuenta las visitas y las guarda en PostgreSQL. El objetivo era desplegarla como se haría en un entorno real.</p>
+          <p class="fw-semibold mb-2">Qué hice:</p>
+          <ul>
+              <li>Dockerfile para la aplicación y Docker Compose para levantarla junto a la base de datos.</li>
+              <li>Apache configurado como proxy inverso para publicarla en el dominio local adrian.local.</li>
+              <li>Tests automáticos de la lógica de la aplicación.</li>
+              <li>Pipeline de GitHub Actions que descarga el código, instala dependencias, pasa los tests y construye la imagen.</li>
+          </ul>
+          <p>Si los tests fallan, la imagen no se construye, así que nunca se despliega una versión rota.</p>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="badge text-bg-primary">Node.js</span>
+              <span class="badge text-bg-primary">Express</span>
+              <span class="badge text-bg-primary">PostgreSQL</span>
+              <span class="badge text-bg-primary">Docker</span>
+              <span class="badge text-bg-primary">Apache</span>
+              <span class="badge text-bg-primary">GitHub Actions</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/adrianhermo93-blip/ud03-despliegue" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="bi bi-github me-1" aria-hidden="true"></i>Ver repositorio
+          </a>
+          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-proyecto-2" tabindex="-1" aria-labelledby="titulo-modal-2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h5" id="titulo-modal-2">Entorno web con Docker</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p>Entorno de desarrollo web montado con contenedores en lugar de herramientas tradicionales como XAMPP.</p>
+          <p class="fw-semibold mb-2">Qué hice:</p>
+          <ul>
+              <li>Un contenedor Nginx que recibe las peticiones web.</li>
+              <li>Un contenedor PHP 8.3 que ejecuta el código de la aplicación.</li>
+              <li>Un contenedor MySQL que guarda los datos.</li>
+              <li>Docker Compose para conectar los tres servicios y arrancarlos con un solo comando.</li>
+          </ul>
+          <p>Cada servicio funciona de forma independiente y el entorno se puede reproducir en cualquier equipo que tenga Docker.</p>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="badge text-bg-primary">Docker Compose</span>
+              <span class="badge text-bg-primary">Nginx</span>
+              <span class="badge text-bg-primary">PHP 8.3</span>
+              <span class="badge text-bg-primary">MySQL</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/adrianhermo93-blip/practica-docker-adrian" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="bi bi-github me-1" aria-hidden="true"></i>Ver repositorio
+          </a>
+          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-proyecto-3" tabindex="-1" aria-labelledby="titulo-modal-3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h5" id="titulo-modal-3">Clean Code y automatización de pruebas</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p>Proyecto en equipo en Java: partimos de un código con malas prácticas y lo refactorizamos sin romper su funcionamiento.</p>
+          <p class="fw-semibold mb-2">Qué hice:</p>
+          <ul>
+              <li>Detección y corrección de más de 10 <span lang="en">code smells</span>, como métodos largos, clases con demasiadas responsabilidades o código duplicado.</li>
+              <li>Aplicación de los principios SOLID, por ejemplo cambiando estructuras switch por polimorfismo.</li>
+              <li>Uso de las herramientas de refactorización de IntelliJ IDEA.</li>
+              <li>Tests automáticos con Selenium WebDriver para comprobar que todo seguía funcionando.</li>
+          </ul>
+          <p>El repositorio guarda la versión original y la refactorizada para comparar el antes y el después.</p>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="badge text-bg-primary">Java</span>
+              <span class="badge text-bg-primary">Maven</span>
+              <span class="badge text-bg-primary">Selenium</span>
+              <span class="badge text-bg-primary">SOLID</span>
+              <span class="badge text-bg-primary">IntelliJ IDEA</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/adrianhermo93-blip/clean-code-automation-final" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="bi bi-github me-1" aria-hidden="true"></i>Ver repositorio
+          </a>
+          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>

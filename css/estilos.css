@@ -1,6 +1,11 @@
 /* ============================================================
    Estilos propios del portfolio · Adrián Hermida
-   Color de marca: azul agua #0e7490 (contraste 5,36:1 sobre blanco)
+   Paleta de marca:
+     #0e7490  azul agua (principal)      · 5,36:1 sobre blanco
+     #155e75  azul agua oscuro (hover)   · 7,27:1 con texto blanco
+     #ecfeff  azul agua claro (fondos)   · 5,15:1 con #0e7490
+   Neutros de Bootstrap: #212529, #6c757d, #f8f9fa y #ffffff
+   Tipografías: Poppins (títulos) y la fuente del sistema (texto)
    ============================================================ */
 
 /* ---------- 1. Variables de marca ---------- */
@@ -11,9 +16,21 @@
   --bs-link-color-rgb: 14, 116, 144;
   --bs-link-hover-color: #155e75;
   --bs-link-hover-color-rgb: 21, 94, 117;
+  --marca-claro: #ecfeff;
+  --fuente-titulos: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-/* ---------- 2. Botones con el color de marca ---------- */
+/* ---------- 2. Tipografía ---------- */
+h1,
+h2,
+h3,
+.navbar-brand {
+  font-family: var(--fuente-titulos);
+}
+
+/* ---------- 3. Botones con el color de marca ---------- */
+/* Bootstrap compila los colores de los botones, por eso se
+   sobrescriben sus variables y no basta con --bs-primary */
 .btn-primary {
   --bs-btn-bg: #0e7490;
   --bs-btn-border-color: #0e7490;
@@ -36,21 +53,54 @@
   --bs-btn-focus-shadow-rgb: 14, 116, 144;
 }
 
-/* ---------- 3. Navegación ---------- */
-html {
-  scroll-behavior: smooth;
+/* ---------- 4. Foco visible (accesibilidad) ---------- */
+/* Contorno de 3 px con contraste de 5,36:1 sobre fondo claro */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.form-control:focus-visible {
+  outline: 0.1875rem solid #0e7490;
+  outline-offset: 0.125rem;
 }
 
+/* En la navbar y el footer el fondo es oscuro: contorno blanco */
+.bg-dark a:focus-visible,
+.bg-dark button:focus-visible {
+  outline-color: #ffffff;
+}
+
+/* ---------- 5. Navegación ---------- */
 section {
   scroll-margin-top: 4.5rem;
 }
 
-/* ---------- 4. Portada ---------- */
+/* El desplazamiento suave solo se activa si el usuario no ha
+   pedido reducir el movimiento en su sistema */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ---------- 6. Portada ---------- */
 .portada {
-  background: linear-gradient(180deg, #ecfeff 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--marca-claro) 0%, #ffffff 100%);
 }
 
 .foto-perfil {
-  max-width: 17rem;
+  max-width: 15rem;
   border: 0.4rem solid #ffffff;
+}
+
+/* A partir del breakpoint lg de Bootstrap (992px) la foto crece */
+@media (min-width: 992px) {
+  .foto-perfil {
+    max-width: 100%;
+  }
+}
+
+/* ---------- 7. Formulario de contacto ---------- */
+/* Borde de los campos con contraste de 4,69:1 (mínimo exigido 3:1) */
+.form-contacto {
+  --bs-border-color: #6c757d;
 }
