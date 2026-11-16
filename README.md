@@ -76,8 +76,8 @@ Tipografías: **Poppins** para los títulos y la fuente del sistema para el text
 
 | Herramienta | Resultado |
 |---|---|
-| Lighthouse (móvil) | Ver captura |
-| WAVE | Ver captura |
+| Lighthouse (móvil) | Accesibilidad 100 · Buenas prácticas 100 · SEO 100 · Rendimiento 86 |
+| WAVE | 0 errores · 0 errores de contraste |
 | Validador HTML del W3C | Ver captura |
 | Validador CSS del W3C | Ver captura |
 
