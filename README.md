@@ -78,8 +78,9 @@ Tipografías: **Poppins** para los títulos y la fuente del sistema para el text
 |---|---|
 | Lighthouse (móvil) | Accesibilidad 100 · Buenas prácticas 100 · SEO 100 · Rendimiento 86 |
 | WAVE | 0 errores · 0 errores de contraste |
-| Validador HTML del W3C | Ver captura |
-| Validador CSS del W3C | Ver captura |
+| Validador HTML del W3C | 0 errores y 0 avisos |
+| Validador CSS del W3C | 0 errores (1 aviso informativo: las variables CSS no se comprueban de forma estática) |
+| Modo responsive de DevTools | Correcto a 375, 768 y 1200 px, sin scroll horizontal |
 
 ![Lighthouse](docs/evidencias/lighthouse.png)
 
